@@ -32,7 +32,7 @@
                                     <constraint firstAttribute="height" constant="30" id="VAa-2X-Nux"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email address" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Srs-Be-DyH">
                                 <rect key="frame" x="150" y="167" width="300" height="30"/>
@@ -52,16 +52,6 @@
                                     <action selector="logInWasPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Qis-Eg-YRy"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YLC-Tn-mZT">
-                                <rect key="frame" x="203" y="205" width="195" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="195" id="HaZ-u5-fWW"/>
-                                    <constraint firstAttribute="height" constant="21" id="RlB-Fa-Qii"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -70,18 +60,15 @@
                             <constraint firstItem="q9S-cF-wHj" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="71" id="BFz-sw-hhc"/>
                             <constraint firstItem="h2o-0R-vYP" firstAttribute="top" secondItem="Srs-Be-DyH" secondAttribute="bottom" constant="101" id="Xns-BO-T99"/>
                             <constraint firstAttribute="centerX" secondItem="VwX-A6-y1b" secondAttribute="centerX" id="aDZ-RE-Yes"/>
-                            <constraint firstAttribute="centerX" secondItem="YLC-Tn-mZT" secondAttribute="centerX" id="eFq-tB-Nof"/>
                             <constraint firstItem="Srs-Be-DyH" firstAttribute="top" secondItem="VwX-A6-y1b" secondAttribute="bottom" constant="8" id="iab-qt-Ypu"/>
                             <constraint firstAttribute="centerX" secondItem="q9S-cF-wHj" secondAttribute="centerX" id="j2g-Fv-1hX"/>
                             <constraint firstItem="VwX-A6-y1b" firstAttribute="top" secondItem="q9S-cF-wHj" secondAttribute="bottom" constant="8" id="kP6-VK-d2c"/>
-                            <constraint firstItem="YLC-Tn-mZT" firstAttribute="top" secondItem="Srs-Be-DyH" secondAttribute="bottom" constant="8" id="v2B-u3-toF"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="emailField" destination="Srs-Be-DyH" id="yGV-nX-ywG"/>
                         <outlet property="passwordField" destination="VwX-A6-y1b" id="0te-tw-ZDX"/>
                         <outlet property="usernameField" destination="q9S-cF-wHj" id="BsE-oD-PAO"/>
-                        <outlet property="warningLabel" destination="YLC-Tn-mZT" id="bKv-Bo-P4B"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
