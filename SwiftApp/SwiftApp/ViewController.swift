@@ -24,8 +24,26 @@ class ViewController: UIViewController {
         var fieldValues: [String] = [usernameField.text,emailField.text,passwordField.text]
         
         if find(fieldValues, "") == nil {
+
+            var userQuery = PFUser.query()
             
-            signUp()
+            userQuery.whereKey("username", equalTo: usernameField.text)
+            
+            userQuery.findObjectsInBackgroundWithBlock({ (objects, error) -> Void in
+                
+                if objects.count > 0 {
+                    
+                    self.login()
+                    
+                } else {
+                    
+                    self.signUp()
+                    
+                }
+                
+            })
+            
+//            signUp()
             
         } else {
             
