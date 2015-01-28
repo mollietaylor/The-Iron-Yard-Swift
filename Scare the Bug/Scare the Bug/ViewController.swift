@@ -8,69 +8,54 @@
 
 import UIKit
 
+let SCREEN_WIDTH = UIScreen.mainScreen().bounds.width
+let SCREEN_HEIGHT = UIScreen.mainScreen().bounds.width
+
 class ViewController: UIViewController {
     
-    @IBOutlet weak var bugView: UIView!
+    var bug = UIImageView(frame: CGRectMake(0, 0, 60, 50))
     
-//    var bug = UIView()
-    var bugLocation:CGPoint!
+    var foot: CGFloat = 1
+    var lastFootPrint = CGPointZero
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-    }
-    
-    func distanceToBug(p1: CGPoint, to p2: CGPoint) -> CGFloat {
-        let xDist:CGFloat = (p2.x - p1.x)
-        let yDist:CGFloat = (p2.y - p1.y)
-        let distance:CGFloat = sqrt((xDist * xDist) + (yDist * yDist));
+        bug.image = UIImage(named: "bug")
+        bug.center = view.center
         
-        return distance
+        view.addSubview(bug)
+        
+//        NSTimer.scheduledTimerWithTimeInterval(0.01, target: self, selector: Selector("footPrints"), userInfo: nil, repeats: true)
+        
     }
     
     override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
         
-        let touch = touches.allObjects[0] as UITouch
-        let touchLocation = touch.locationInView(self.view)
-        println(touchLocation)
-        var distance = distanceToBug(touchLocation, to: bugView.center)
-        println(distance)
-        if distance < 200 {
+        if let touch = touches.allObjects.first as? UITouch {
             
-            println("bug y: \(bugView.center.y)")
-            println("touch y: \(touchLocation.y)")
+            let location = touch.locationInView(view)
             
-            // bug is above touch
-            if bugView.center.y < touchLocation.y {
+            var (x, y) = (bug.center.x - location.x, bug.center.y - location.y)
+            
+            UIView.animateWithDuration(0.4, animations: { () -> Void in
                 
-                UIView.animateWithDuration(1.0, animations: {
-                    
-//                    self.bugView.frame.origin = CGPointMake(self.bugView.center.x, (self.bugView.center.y - 10))
-                    self.bugView.center = CGPointMake(self.bugView.center.x, (self.bugView.center.y - 10))
-                    println("bug frame: \(self.bugView.frame)")
-                    
-                    self.view.setNeedsDisplay()
-                    
-                })
+                if (fabs(x) > fabs(y)) {
+                    self.bug.center.x += (SCREEN_WIDTH / x)
+                } else {
+                    self.bug.center.x += (SCREEN_WIDTH / x / 2)
+                }
+                if (fabs(x) < fabs(y)) {
+                    self.bug.center.y += (SCREEN_HEIGHT / y)
+                } else {
+                    self.bug.center.y += (SCREEN_HEIGHT / y / 2)
+                }
                 
-                
-            }
+            })
             
         }
         
     }
-    
-    override func touchesMoved(touches: NSSet, withEvent event: UIEvent) {
-        
-        
-        
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
 
 
 }
-
