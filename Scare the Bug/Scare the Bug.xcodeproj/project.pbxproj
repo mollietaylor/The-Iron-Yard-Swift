@@ -405,6 +405,7 @@
 				ECCC9E221A78204A00D481C1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		ECCC9E231A78204A00D481C1 /* Build configuration list for PBXNativeTarget "Scare the BugTests" */ = {
 			isa = XCConfigurationList;
@@ -413,6 +414,7 @@
 				ECCC9E251A78204A00D481C1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

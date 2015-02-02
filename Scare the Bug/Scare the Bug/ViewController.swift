@@ -26,7 +26,34 @@ class ViewController: UIViewController {
         
         view.addSubview(bug)
         
-//        NSTimer.scheduledTimerWithTimeInterval(0.01, target: self, selector: Selector("footPrints"), userInfo: nil, repeats: true)
+        NSTimer.scheduledTimerWithTimeInterval(0.01, target: self, selector: "footPrints", userInfo: nil, repeats: true)
+        
+    }
+    
+    func footPrints() {
+        
+        if var presentationLayer: AnyObject! = bug.layer.presentationLayer() {
+            
+            var center = CGPointMake(CGRectGetMidX(presentationLayer.frame), CGRectGetMidY(presentationLayer.frame))
+            
+            var xDist = (center.x - lastFootPrint.x)
+            var yDist = (center.y - lastFootPrint.y)
+            var distance = sqrt((xDist * xDist) + (yDist * yDist))
+            
+            if fabs(distance) < 10 { return }
+            
+            var footPrint = UIView(frame: CGRectMake(0, 0, 6, 6))
+            footPrint.backgroundColor = UIColor.blackColor()
+            footPrint.layer.cornerRadius = 3
+            footPrint.center = CGPointMake(center.x + (foot * 3), center.y + (foot * 3))
+            
+            lastFootPrint = footPrint.center
+            
+            view.insertSubview(footPrint, atIndex: 0)
+            
+        }
+        
+        foot = foot == -1 ? 1 : -1;
         
     }
     
