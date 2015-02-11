@@ -69,6 +69,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
         // or you could put all this stuff inside dispatch_once
         let venues = FourSquareRequest.requestVenuesWithLocation(userLocation)
         
+        println(venues)
+        
         createAnnotationsWithVenues(venues)
         
         // zoom to annotations
