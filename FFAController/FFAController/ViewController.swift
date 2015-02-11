@@ -104,64 +104,43 @@ class ViewController: UIViewController, MCSessionDelegate, MCNearbyServiceAdvert
         
     }
     
-    @IBAction func upPressed(sender: AnyObject) {
+    func moveOrFire(object: [String: AnyObject]) {
         
-        let moveData = NSJSONSerialization.dataWithJSONObject(["direction":"up"], options:NSJSONWritingOptions.allZeros, error: nil)
+        let moveData = NSJSONSerialization.dataWithJSONObject(object, options:NSJSONWritingOptions.allZeros, error: nil)
         
         if let roomPeerID = roomPeerID {
             session.sendData(moveData, toPeers: [roomPeerID], withMode: MCSessionSendDataMode.Reliable, error: nil)
         }
+        
+    }
+    
+    @IBAction func upPressed(sender: AnyObject) {
+        
+        moveOrFire(["direction":"up"])
         
     }
     
     @IBAction func leftPressed(sender: AnyObject) {
         
-        let moveData = NSJSONSerialization.dataWithJSONObject(["direction":"left"], options:NSJSONWritingOptions.allZeros, error: nil)
-        
-        if let roomPeerID = roomPeerID {
-            session.sendData(moveData, toPeers: [roomPeerID], withMode: MCSessionSendDataMode.Reliable, error: nil)
-        }
+        moveOrFire(["direction":"left"])
         
     }
     
     @IBAction func rightPressed(sender: AnyObject) {
         
-        let moveData = NSJSONSerialization.dataWithJSONObject(["direction":"right"], options:NSJSONWritingOptions.allZeros, error: nil)
-        
-        if let roomPeerID = roomPeerID {
-            session.sendData(moveData, toPeers: [roomPeerID], withMode: MCSessionSendDataMode.Reliable, error: nil)
-        }
-        
-    }
-    
-    @IBAction func downPressed(sender: AnyObject) {
-        
-        let moveData = NSJSONSerialization.dataWithJSONObject(["direction":"down"], options:NSJSONWritingOptions.allZeros, error: nil)
-        
-        if let roomPeerID = roomPeerID {
-            session.sendData(moveData, toPeers: [roomPeerID], withMode: MCSessionSendDataMode.Reliable, error: nil)
-        }
+        moveOrFire(["direction":"right"])
         
     }
     
     @IBAction func normalPressed(sender: AnyObject) {
         
-        let moveData = NSJSONSerialization.dataWithJSONObject(["fire":"normal"], options:NSJSONWritingOptions.allZeros, error: nil)
-        
-        if let roomPeerID = roomPeerID {
-            session.sendData(moveData, toPeers: [roomPeerID], withMode: MCSessionSendDataMode.Reliable, error: nil)
-        }
+        moveOrFire(["fire":"normal"])
         
     }
     
     @IBAction func specialPressed(sender: AnyObject) {
         
-        let moveData = NSJSONSerialization.dataWithJSONObject(["fire":"special"], options:NSJSONWritingOptions.allZeros, error: nil)
-        
-        if let roomPeerID = roomPeerID {
-            session.sendData(moveData, toPeers: [roomPeerID], withMode: MCSessionSendDataMode.Reliable, error: nil)
-        }
-        
+        moveOrFire(["fire":"special"])
             
     }
     
