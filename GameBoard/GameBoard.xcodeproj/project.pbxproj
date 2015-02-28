@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EC542C611A96326800E25F89 /* GameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC542C601A96326800E25F89 /* GameModel.swift */; };
+		EC54AEA21A9625A500A9A12D /* TODO.md in Sources */ = {isa = PBXBuildFile; fileRef = EC54AEA11A9625A500A9A12D /* TODO.md */; };
 		ECFD29651A94D5FB00C35E42 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECFD29641A94D5FB00C35E42 /* AppDelegate.swift */; };
 		ECFD29671A94D5FB00C35E42 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECFD29661A94D5FB00C35E42 /* ViewController.swift */; };
 		ECFD296A1A94D5FB00C35E42 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ECFD29681A94D5FB00C35E42 /* Main.storyboard */; };
@@ -28,6 +30,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		EC542C601A96326800E25F89 /* GameModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameModel.swift; sourceTree = "<group>"; };
+		EC542C621A96398C00E25F89 /* Logic.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Logic.playground; sourceTree = "<group>"; };
+		EC54AEA11A9625A500A9A12D /* TODO.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = TODO.md; sourceTree = "<group>"; };
 		ECFD295F1A94D5FB00C35E42 /* GameBoard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GameBoard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ECFD29631A94D5FB00C35E42 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ECFD29641A94D5FB00C35E42 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -63,6 +68,7 @@
 		ECFD29561A94D5FB00C35E42 = {
 			isa = PBXGroup;
 			children = (
+				EC54AEA11A9625A500A9A12D /* TODO.md */,
 				ECFD29611A94D5FB00C35E42 /* GameBoard */,
 				ECFD29771A94D5FC00C35E42 /* GameBoardTests */,
 				ECFD29601A94D5FB00C35E42 /* Products */,
@@ -81,11 +87,13 @@
 		ECFD29611A94D5FB00C35E42 /* GameBoard */ = {
 			isa = PBXGroup;
 			children = (
+				EC542C601A96326800E25F89 /* GameModel.swift */,
 				ECFD29661A94D5FB00C35E42 /* ViewController.swift */,
 				ECFD29681A94D5FB00C35E42 /* Main.storyboard */,
 				ECFD29621A94D5FB00C35E42 /* Supporting Files */,
 				ECFD29841A94D9C800C35E42 /* GameBoardView.swift */,
 				ECFD29861A94E30E00C35E42 /* GamePiece.swift */,
+				EC542C621A96398C00E25F89 /* Logic.playground */,
 			);
 			path = GameBoard;
 			sourceTree = "<group>";
@@ -222,6 +230,8 @@
 				ECFD29651A94D5FB00C35E42 /* AppDelegate.swift in Sources */,
 				ECFD29871A94E30E00C35E42 /* GamePiece.swift in Sources */,
 				ECFD29851A94D9C800C35E42 /* GameBoardView.swift in Sources */,
+				EC54AEA21A9625A500A9A12D /* TODO.md in Sources */,
+				EC542C611A96326800E25F89 /* GameModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -413,6 +423,7 @@
 				ECFD29801A94D5FC00C35E42 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		ECFD29811A94D5FC00C35E42 /* Build configuration list for PBXNativeTarget "GameBoardTests" */ = {
 			isa = XCConfigurationList;
@@ -421,6 +432,7 @@
 				ECFD29831A94D5FC00C35E42 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

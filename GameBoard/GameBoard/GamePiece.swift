@@ -19,6 +19,12 @@ enum PieceType: Int {
     
 }
 
+protocol GamePieceDelegate {
+    
+    func pieceSelected(piece: GamePiece)
+    
+}
+
 let player1Color = UIColor(red:0.97, green:0.71, blue:0.05, alpha:1)
 let player2Color = UIColor(red:0, green:0.11, blue:0.35, alpha:1)
 
@@ -27,6 +33,18 @@ let pieceSize: CGFloat = 20
 class GamePiece: UIView {
     
     var type: PieceType!
+    var player: Player? { // so you can test the direction
+        
+        let playerIndex = (type.rawValue - 1) % 2
+     
+        return DataModel.mainData().currentGame?.players[playerIndex]
+        
+    }
+    
+    /// (col,row)
+    var square: (Int, Int)!
+    
+    var delegate: GamePieceDelegate?
     
     init(type: PieceType) {
         super.init(frame: CGRectMake(0, 0, pieceSize, pieceSize))
@@ -44,6 +62,20 @@ class GamePiece: UIView {
     // init(coder:) is called by storyboard
     required init(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
+        
+        // piece selected
+        delegate?.pieceSelected(self)
+        
+        // change color for selection
+        
+        
+        
+        // what kind of piece was selected?
+//        if type != .Empty
+        
     }
     
     

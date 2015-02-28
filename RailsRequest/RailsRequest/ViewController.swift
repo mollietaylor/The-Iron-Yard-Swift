@@ -19,12 +19,42 @@ class ViewController: UIViewController {
             
         } else {
             
-            User.currentUser().getUserToken()
+            // show loginVC
+            var signInVC = SignInController()
+            presentViewController(signInVC, animated: false, completion: nil)
             
         }
         
     }
+    
+    func newGame() {
+        
+        
+        
+    }
 
 
+}
+
+class SignInController: UIViewController {
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+    }
+    
+    func signIn() {
+        
+        User.currentUser().signIn("mollie@proximityviz.com", password: "password")
+        
+    }
+    
+    func register() {
+        
+        User.currentUser().register("spokes", email: "mollie@proximityviz.com", password: "password")
+        
+    }
+    
+    
 }
 

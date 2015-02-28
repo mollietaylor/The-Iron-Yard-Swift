@@ -35,14 +35,40 @@ class User {
     
     class func currentUser() -> User { return _currentUser }
     
-    func getUserToken() {
+    func register(username: String, email: String, password: String) {
         
         let options: [String:AnyObject] = [
             "endpoint" : "users",
             "method" : "POST",
             "body" : [
                 
-                "user" : [ "email" : "mollie@proximityviz.com", "password" : "password"]
+                "user" : [ "username" : username, "email" : email, "password" : password ]
+                
+            ]
+            
+        ]
+        
+        APIRequest.requestWithOptions(options, andCompletion: { (responseInfo) -> () in
+            
+            // set token
+            println(responseInfo)
+            
+            let dataInfo = responseInfo["data"] as [String:String]
+            
+            self.token = dataInfo["auth_token"]
+            
+        })
+        
+    }
+    
+    func signIn(email: String, password: String) {
+        
+        let options: [String:AnyObject] = [
+            "endpoint" : "users/sign_in",
+            "method" : "POST",
+            "body" : [
+                
+                "user" : [ "email" : email, "password" : password ]
                 
             ]
             
@@ -63,9 +89,29 @@ class User {
     
 }
 
+typealias ResponseBlock = (responseInfo: [String: AnyObject]) -> ()
+
 class APIRequest {
     
-    class func requestWithOptions(options: [String: AnyObject], andCompletion completion: (responseInfo: [String: AnyObject]) -> ()) {
+    class func requestWithEndpoint(endpoint: String, method: String, completion: ResponseBlock) {
+        
+        var options = [
+        
+            "endpoint" : endpoint,
+            "method" : method,
+            "body" : [
+            
+                "user" : ["authentication_token" : User.currentUser().token!]
+            
+            ]
+            
+        ] as [String:AnyObject]
+        
+        requestWithOptions(options, andCompletion: completion)
+        
+    }
+    
+    class func requestWithOptions(options: [String: AnyObject], andCompletion completion: ResponseBlock) {
         
         var url = NSURL(string: API_URL + (options["endpoint"] as String))
         

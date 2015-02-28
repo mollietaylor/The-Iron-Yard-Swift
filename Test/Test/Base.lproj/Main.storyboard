@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="sDJ-1b-R3u">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="ufC-wZ-h7g">
+            <objects>
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="Test" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
+                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6zK-O3-Zgl">
+                                <rect key="frame" x="260" y="260" width="80" height="80"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="prox-mollie-marker" translatesAutoresizingMaskIntoConstraints="NO" id="Qip-Pe-AWv">
+                                        <rect key="frame" x="10" y="25" width="57" height="42"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="Qip-Pe-AWv" secondAttribute="trailing" constant="13" id="Ior-1i-Clh"/>
+                                    <constraint firstAttribute="height" constant="80" id="XTB-xm-PNb"/>
+                                    <constraint firstItem="Qip-Pe-AWv" firstAttribute="leading" secondItem="6zK-O3-Zgl" secondAttribute="leading" constant="10" id="fFi-BT-LZj"/>
+                                    <constraint firstItem="Qip-Pe-AWv" firstAttribute="top" secondItem="6zK-O3-Zgl" secondAttribute="top" constant="25" id="k9b-Z8-LCB"/>
+                                    <constraint firstAttribute="bottom" secondItem="Qip-Pe-AWv" secondAttribute="bottom" constant="13" id="opd-kg-6Am"/>
+                                    <constraint firstAttribute="width" constant="80" id="z95-Jp-i0t"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="6zK-O3-Zgl" secondAttribute="centerX" id="bur-xM-i7D"/>
+                            <constraint firstAttribute="centerY" secondItem="6zK-O3-Zgl" secondAttribute="centerY" id="tVG-AR-aol"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="loaderView" destination="6zK-O3-Zgl" id="max-gn-4Pw"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+        <!--DropVC-->
+        <scene sceneID="ub9-sv-dSt">
+            <objects>
+                <viewController id="sDJ-1b-R3u" customClass="DropVC" customModule="Test" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ip4-uq-g6I"/>
+                        <viewControllerLayoutGuide type="bottom" id="eEF-nj-aqh"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Fry-nO-w5e">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UrN-6n-6re">
+                                <rect key="frame" x="200" y="0.0" width="200" height="400"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="prox-mollie-marker" translatesAutoresizingMaskIntoConstraints="NO" id="85v-8b-DAc">
+                                        <rect key="frame" x="81" y="337" width="53" height="55"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="prox-mollie-marker" translatesAutoresizingMaskIntoConstraints="NO" id="zyY-T1-lau">
+                                        <rect key="frame" x="42" y="307" width="42" height="45"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="prox-mollie-marker" translatesAutoresizingMaskIntoConstraints="NO" id="Qip-ql-aCC">
+                                        <rect key="frame" x="75" y="233" width="30" height="30"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="prox-mollie-marker" translatesAutoresizingMaskIntoConstraints="NO" id="lbz-X7-whf">
+                                        <rect key="frame" x="102" y="277" width="32" height="33"/>
+                                    </imageView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="400" id="7cS-0Y-Wwd"/>
+                                    <constraint firstAttribute="width" constant="200" id="7vf-SL-K1J"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="UrN-6n-6re" firstAttribute="top" secondItem="Fry-nO-w5e" secondAttribute="topMargin" id="NHY-2t-b2T"/>
+                            <constraint firstAttribute="centerX" secondItem="UrN-6n-6re" secondAttribute="centerX" id="yJJ-5q-Q9G"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="marker1" destination="zyY-T1-lau" id="eLN-tW-olt"/>
+                        <outlet property="marker2" destination="lbz-X7-whf" id="e3V-eU-jx0"/>
+                        <outlet property="marker3" destination="Qip-ql-aCC" id="2tL-Fa-E9k"/>
+                        <outlet property="marker4" destination="85v-8b-DAc" id="fAn-Is-DUt"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wan-la-RzL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="970" y="372"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="prox-mollie-marker" width="85" height="119"/>
+    </resources>
+</document>
