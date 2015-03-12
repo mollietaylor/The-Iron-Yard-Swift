@@ -14,6 +14,7 @@
 		EC263AA81A93BDEA00BEEDF2 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC263AA61A93BDEA00BEEDF2 /* LaunchScreen.xib */; };
 		EC263AB41A93BDEA00BEEDF2 /* RailsRequestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC263AB31A93BDEA00BEEDF2 /* RailsRequestTests.swift */; };
 		EC263ABE1A93BE3300BEEDF2 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC263ABD1A93BE3300BEEDF2 /* API.swift */; };
+		EC29D8711AAB329F00BB15D6 /* Camera.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC29D8701AAB329F00BB15D6 /* Camera.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +39,7 @@
 		EC263AB21A93BDEA00BEEDF2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EC263AB31A93BDEA00BEEDF2 /* RailsRequestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RailsRequestTests.swift; sourceTree = "<group>"; };
 		EC263ABD1A93BE3300BEEDF2 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		EC29D8701AAB329F00BB15D6 /* Camera.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Camera.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +88,7 @@
 				EC263AA61A93BDEA00BEEDF2 /* LaunchScreen.xib */,
 				EC263A9B1A93BDEA00BEEDF2 /* Supporting Files */,
 				EC263ABD1A93BE3300BEEDF2 /* API.swift */,
+				EC29D8701AAB329F00BB15D6 /* Camera.storyboard */,
 			);
 			path = RailsRequest;
 			sourceTree = "<group>";
@@ -196,6 +199,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EC263AA31A93BDEA00BEEDF2 /* Main.storyboard in Resources */,
+				EC29D8711AAB329F00BB15D6 /* Camera.storyboard in Resources */,
 				EC263AA81A93BDEA00BEEDF2 /* LaunchScreen.xib in Resources */,
 				EC263AA51A93BDEA00BEEDF2 /* Images.xcassets in Resources */,
 			);
@@ -409,6 +413,7 @@
 				EC263AB91A93BDEA00BEEDF2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		EC263ABA1A93BDEA00BEEDF2 /* Build configuration list for PBXNativeTarget "RailsRequestTests" */ = {
 			isa = XCConfigurationList;
@@ -417,6 +422,7 @@
 				EC263ABC1A93BDEA00BEEDF2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -38,7 +38,7 @@ class ViewController: UIViewController {
         rotationAnimation.fromValue = 0.0
         rotationAnimation.toValue = Float(M_PI * 2.0)
         rotationAnimation.duration = duration
-        rotationAnimation.repeatCount = Float.infinity
+        rotationAnimation.repeatCount = 1
         
         view.layer.addAnimation(rotationAnimation, forKey: "")
         
